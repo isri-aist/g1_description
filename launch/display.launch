@@ -1,0 +1,22 @@
+<launch>
+  <arg
+    name="model"
+    default="29dof"
+    doc="G1 model variant: 23dof or 29dof" />
+  <param
+    name="robot_description"
+    textfile="$(find g1_description)/urdf/g1_$(arg model).urdf" />
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find g1_description)/launch/check_joint.rviz" />
+</launch>

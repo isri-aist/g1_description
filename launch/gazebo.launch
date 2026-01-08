@@ -1,0 +1,16 @@
+<launch>
+  <arg
+    name="model"
+    default="29dof"
+    doc="G1 model variant: 23dof or 29dof" />
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true" />
+  </include>
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find g1_description)/urdf/g1_$(arg model).urdf -urdf -z 1.05 -model g1_description"
+    output="screen" />
+</launch>
