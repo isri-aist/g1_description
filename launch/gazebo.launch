@@ -1,7 +1,7 @@
 <launch>
   <arg
     name="model"
-    default="29dof"
+    default="23dof"
     doc="G1 model variant: 23dof or 29dof" />
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch">

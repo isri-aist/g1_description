@@ -6,7 +6,7 @@ This package includes a universal humanoid robot description (URDF & MJCF) for t
 
 The package provides two model variants:
 - `urdf/g1_23dof.urdf` - G1 with 23 degrees of freedom (fixed waist)
-- `urdf/g1_29dof.urdf` - G1 with 29 degrees of freedom (full dexterity including waist and hands)
+- `urdf/g1_29dof.urdf` - G1 with 29 degrees of freedom (adding waist and wrist mobility)
 
 Both models support simulation environments including MuJoCo and Gazebo.
 
@@ -42,7 +42,7 @@ root [⚓] => /pelvis/
 ```
 
 **29-DOF variant additions:**
-- `waist_roll_joint` between pelvis and waist_yaw_joint
+- `waist_roll_joint` and `waist_pitch_joint`
 - Left wrist: `left_wrist_pitch_joint`, `left_wrist_yaw_joint`
 - Right wrist: `right_wrist_pitch_joint`, `right_wrist_yaw_joint`
 
@@ -61,7 +61,7 @@ python -m mujoco.viewer --mjcf=mjcf/scene_23dof.xml
 ### RViz
 
 ```bash
-# Default (29-DOF)
+# Default (23-DOF)
 ros2 launch g1_description display.launch
 
 # Select specific model
@@ -72,7 +72,7 @@ ros2 launch g1_description display.launch model:=29dof
 ### Gazebo
 
 ```bash
-# Default (29-DOF)
+# Default (23-DOF)
 ros2 launch g1_description gazebo.launch
 
 # Select specific model

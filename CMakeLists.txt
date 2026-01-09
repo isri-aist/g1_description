@@ -43,7 +43,7 @@ else()
   install(FILES package.xml DESTINATION "${CATKIN_PACKAGE_SHARE_DESTINATION}")
 endif()
 
-foreach(dir convex launch meshes rsdf urdf)
+foreach(dir launch meshes rsdf urdf)
   if(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${dir})
     install(DIRECTORY ${dir}/
             DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
