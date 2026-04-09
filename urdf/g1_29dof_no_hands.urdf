@@ -817,7 +817,7 @@
     </collision>
   </link>
   <joint name="left_tool_attach_joint" type="fixed">
-    <origin xyz="0.022 0 0" rpy="0 0 0"/>
+    <origin xyz="0.022 0 0" rpy="-1.5707963267948966 1.5707963267948966 0"/>
     <parent link="left_tool_connector_link"/>
     <child link="left_tool_attach"/>
   </joint>
@@ -1037,7 +1037,7 @@
     </collision>
   </link>
   <joint name="right_tool_attach_joint" type="fixed">
-    <origin xyz="0.022 0 0" rpy="0 0 0"/>
+    <origin xyz="0.022 0 0" rpy="1.5707963267948966 1.5707963267948966 0"/>
     <parent link="right_tool_connector_link"/>
     <child link="right_tool_attach"/>
   </joint>
