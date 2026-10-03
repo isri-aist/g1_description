@@ -4,11 +4,12 @@
 
 This package includes a universal humanoid robot description (URDF & MJCF) for the [Unitree G1](https://www.unitree.com/g1), developed by [Unitree Robotics](https://www.unitree.com/).
 
-The package provides two model variants:
+The package provides three model variants:
 - `urdf/g1_23dof.urdf` - G1 with 23 degrees of freedom (fixed waist)
 - `urdf/g1_29dof.urdf` - G1 with 29 degrees of freedom (adding waist and wrist mobility)
+- `urdf/g1_29dof_no_hands` - G1 with 29 degrees of freedom and with a tool connector instead of its hands
 
-Both models support simulation environments including MuJoCo and Gazebo.
+All models support simulation environments including MuJoCo and Gazebo.
 
 ## Robot Structure
 
@@ -56,6 +57,7 @@ pip install mujoco
 # Select specific model
 python -m mujoco.viewer --mjcf=mjcf/scene_29dof.xml
 python -m mujoco.viewer --mjcf=mjcf/scene_23dof.xml
+python -m mujoco.viewer --mjcf=mjcf/scene_29dof_no_hands.xml
 ```
 
 ### RViz
@@ -67,6 +69,7 @@ ros2 launch g1_description display.launch
 # Select specific model
 ros2 launch g1_description display.launch model:=23dof
 ros2 launch g1_description display.launch model:=29dof
+ros2 launch g1_description display.launch model:=29dof_no_hands
 ```
 
 ### Gazebo
@@ -78,4 +81,5 @@ ros2 launch g1_description gazebo.launch
 # Select specific model
 ros2 launch g1_description gazebo.launch model:=23dof
 ros2 launch g1_description gazebo.launch model:=29dof
+ros2 launch g1_description gazebo.launch model:=29dof_no_hands
 ```
