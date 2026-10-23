@@ -809,6 +809,12 @@
       </geometry>
       <material name="white"/>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://g1_description/meshes/left_rubber_hand.STL"/>
+      </geometry>
+    </collision>
   </link>
   <link name="right_shoulder_pitch_link">
     <inertial>
@@ -1017,5 +1023,11 @@
       </geometry>
       <material name="white"/>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://g1_description/meshes/right_rubber_hand.STL"/>
+      </geometry>
+    </collision>
   </link>
 </robot>
